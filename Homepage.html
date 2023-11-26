@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            overflow: hidden;
+            background-color: #a56a33;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .search-container {
+            margin-right: 10px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-container input {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            border: none;
+            outline: none;
+        }
+
+        .logo {
+            margin: 10px;
+        }
+
+        .search-container img {
+            height: 25px;
+            width: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="#default" class="logo">CompanyLogo</a>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search..">
+            <img src="Search.png" alt="Search" id="search-button">
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("search-button").addEventListener("click", function () {
+            var searchTerm = document.getElementById("search-input").value;
+            alert("You searched for: " + searchTerm);
+        });
+    </script>
+</body>
+</html>
