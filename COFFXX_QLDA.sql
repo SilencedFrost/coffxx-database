@@ -1,7 +1,7 @@
-﻿create database QL_COFFXX;
+create database QL_COFFXX;
 go
 
-use QL_COFFXX;
+use QL_COFFXX
 go
 
 create table Users
@@ -161,11 +161,11 @@ begin
 			insert into Drinks(drinkname, decscription, typ) values (@Drinkname, @Description, @Typ);
 		end
 		insert into DrinkSizes(drinkid, size, price) values ((select drinkid from Drinks where drinkname like @Drinkname), @Size, @Price);
-		print N'Thêm thức uống thành công'
+		print N'Th�m th?c u?ng th�nh c�ng'
 	end
 	else
 	begin
-		print N'Đã tồn tại loại thức uống này ở kích thước này'
+		print N'?� t?n t?i lo?i th?c u?ng n�y ? k�ch th??c n�y'
 	end
 end
 go
@@ -179,11 +179,11 @@ begin
 	if not exists(select * from Users where username like @Username or email like @Email)
 		begin
 		insert into Users(username, email, pass) values (@Username, @Email, HASHBYTES('SHA2_256', @Password))
-		print N'Đăng ký thành công'
+		print N'??ng k� th�nh c�ng'
 		end
 	else
 		begin
-		print N'Đăng ký thất bại, đã có thông tin người dùng này'
+		print N'??ng k� th?t b?i, ?� c� th�ng tin ng??i d�ng n�y'
 		end
 end;
 go
