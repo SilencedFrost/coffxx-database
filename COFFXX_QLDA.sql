@@ -11,11 +11,8 @@ create table Users
 	email varchar(100) not null unique,
 	pass char(64) not null,
 	SDT varchar(12),
-	sonha varchar(30),
-	phuong varchar(30),
-	quan varchar(30),
-	thanhpho varchar(30),
-	ad bit,
+	diachi nvarchar(200),
+	sa bit,
 	primary key (userid)
 );
 
@@ -33,7 +30,7 @@ create table Bill
 (
 	userid int,
 	billid int not null identity(1, 1),
-	paymentmethod varchar(10),
+	paymethod varchar(10),
 	amount float
 	primary key (billid)
 );
