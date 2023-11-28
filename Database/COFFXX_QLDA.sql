@@ -16,7 +16,7 @@ create table Users
 	primary key (userid)
 );
 
-create table CreditCard
+create table BankingCard
 (
 	userid int,
 	cardnum varchar(19),
@@ -161,11 +161,11 @@ begin
 			insert into Drinks(drinkname, decscription, typ) values (@Drinkname, @Description, @Typ);
 		end
 		insert into DrinkSizes(drinkid, size, price) values ((select drinkid from Drinks where drinkname like @Drinkname), @Size, @Price);
-		print N'Thêm th?c u?ng thành công'
+		print N'ThÃªm th?c u?ng thÃ nh cÃ´ng'
 	end
 	else
 	begin
-		print N'?ã t?n t?i lo?i th?c u?ng này ? kích th??c này'
+		print N'?Ã£ t?n t?i lo?i th?c u?ng nÃ y ? kÃ­ch th??c nÃ y'
 	end
 end
 go
@@ -179,11 +179,11 @@ begin
 	if not exists(select * from Users where username like @Username or email like @Email)
 		begin
 		insert into Users(username, email, pass) values (@Username, @Email, HASHBYTES('SHA2_256', @Password))
-		print N'??ng kı thành công'
+		print N'??ng kÃ½ thÃ nh cÃ´ng'
 		end
 	else
 		begin
-		print N'??ng kı th?t b?i, ?ã có thông tin ng??i dùng này'
+		print N'??ng kÃ½ th?t b?i, ?Ã£ cÃ³ thÃ´ng tin ng??i dÃ¹ng nÃ y'
 		end
 end;
 go
