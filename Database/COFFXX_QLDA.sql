@@ -62,8 +62,8 @@ create table DrinkSizes
 
 create table BestSeller
 (
-	topnum nvarchar(20) not null,
-	pos int not null,
+	pos nvarchar(20) not null,
+	drinkid int not null,
 	primary key (topnum, drinkid)
 );
 
