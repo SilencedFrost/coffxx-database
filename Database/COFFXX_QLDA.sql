@@ -28,11 +28,11 @@ create table BankingCard
 
 create table Bill
 (
-	userid int,
+	userid int not null,
 	billid int not null identity(1, 1),
 	paymethod varchar(10),
 	amount float
-	primary key (billid)
+	primary key (billid, userid)
 );
 
 create table BillDrinks
