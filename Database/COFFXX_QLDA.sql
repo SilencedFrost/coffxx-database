@@ -64,7 +64,7 @@ create table BestSeller
 (
 	pos nvarchar(20) not null,
 	drinkid int not null,
-	primary key (topnum, drinkid)
+	primary key (drinkid)
 );
 
 create table Cart
